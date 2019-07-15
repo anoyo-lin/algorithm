@@ -1,0 +1,14 @@
+procedure BFS(Graph, start_vertex):
+	let Q be a queue
+	label start_vertex as discovered
+	Q.pushin(start_vertex)
+	while Q is not empty
+		v = Q.popout()
+		if v is the goal:
+			return v
+		for w in Graph.adjacentEdges(v) (all edges from v) do
+
+			if w is not labeled as discovered:
+				label w as discovered
+				w.parent = v
+				Q.pushin(w)

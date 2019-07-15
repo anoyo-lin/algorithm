@@ -1,0 +1,16 @@
+procedure DFS(Graph, start):
+	label start as discovered
+	for all directed edges from v to w that are in Graph.adjacentEdges(v) do
+		if vertex w is not labeled as discovered then
+			recursively call DFS(graph, vertex w) 
+directed recursive:
+procedure iteratic DFS(Graph, start):
+	s = stack()
+	s.push(start)
+	while s is not empty:
+		v = s.pop()
+		if v is not labeded as discovered
+			label v as discovered
+			for all edges from v to w that are in Graph.adjacentEdges(v) do
+				s.push(v)
+			
