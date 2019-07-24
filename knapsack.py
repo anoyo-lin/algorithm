@@ -20,7 +20,7 @@ class dp(nums[], target):
                 if ( j <= nums[i-1]):
                     dp_lst[i][j] = dp_lst[i-1][j]
                 elif ( j >= nums[i-1]):
-                    dp_lst[i][j] = dp_lst[i-1][j] || dp_lst[i-1][j - nums[i]]
+                    dp_lst[i][j] = dp_lst[i-1][j] || dp_lst[i-1][j - nums[i]] && True
 
         for j in range(self.target, 0):
             if dp_lst[self.nums.length()-1][j]:
@@ -34,7 +34,7 @@ class dp(nums[], target):
         dp[0] = true
         for i in range(0, self.nums.length()-1):
             for j in range(self.target, self.target-nums[i], -1):
-                dp[j] = dp[j- nums[i]]
+                dp[j] = dp[j]||dp[j- nums[i]]
 
 
         for k in range(self.target, 0, -1):
@@ -44,6 +44,9 @@ class dp(nums[], target):
         return 0
 
 
+                |-------------weight[i]------------|
+i-1 : xxxxxxxxxxZxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxO
+i   : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmax(O, value(i) + Z)
 
 
 

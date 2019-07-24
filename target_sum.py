@@ -14,19 +14,18 @@ class dfs_brute_solution(nums, target):
         retrun dfs(nums, 0, target)
 
     def dfs(self, nums, index, target):
-        list_1.append(target - self.target)
         if index == self.nums.length:
             if target == 0:
-                print (list_1)
-
                 return 1
             else:
                 return 0
-        list_1.pop(-1)
-
+        if f(index, target) != Null:
+            return f(index, target)
+        //get count
         int count = 0
         count += dfs(nums, index+1, target + nums[index])
         count += dfs(nums, index+1, target - nums[index])
+        save ( index , target , count)
 
         return count
 
