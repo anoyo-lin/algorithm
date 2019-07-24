@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+#因为 会 把 一个 1 换成 0 ， 所以 抽象成 所有的 路 都有一个 1
+#进一步抽象 就是  所有 的 1 到 左上和 右下 的 距离 取 最小值
 class matrix_puzzle(grid=[][]):
     def __init__(self):
         self.directons = [ [-1, 0], [1, 0], [0, -1], [0, 1] ]
@@ -31,6 +33,7 @@ class matrix_puzzle(grid=[][]):
             return min_step
 
     def bfs(self, distArray, grid, start=[], end=[]):
+        #fifo stack, and boolean[][] to mark if we visted the node
         let Q as stack
         init boolean[rows][cols] visited default False
 
@@ -45,6 +48,8 @@ class matrix_puzzle(grid=[][]):
                     location_lst = Q.pop(0)
                     row = location_lst[0]
                     col = location_lst[1]
+                    # '1' or 'the BR'
+                    # abstract to the miner sweeping game
                 if grid[row][col] == 1 or row == self.rows - 1 and col == self.cols - 1:
                     distArray[row][col] = step
 
