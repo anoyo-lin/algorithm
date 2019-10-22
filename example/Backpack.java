@@ -62,7 +62,6 @@ public class Solution {
 		     * else:
 		     * 	max(dp[i-1][j], dp[i-1][j- A[i-1]])
 		     * 	is equal to below!!!
-		     */
                 dp[i][j] = dp[i - 1][j];
                 if (j >= A[i - 1] && dp[i - 1][j - A[i - 1]]) {
                     dp[i][j] = true;

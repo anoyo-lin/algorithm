@@ -1,0 +1,18 @@
+t(n) = t(n/2) + 2 t(1) =1
+
+t(n) = t(n/3) + 4 t(1) = 1
+
+2clog2n + o(1) vs. 4clog3n + o(1)
+
+
+log2n  vs. 2log3n
+
+
+2log3n = 2 *  log2n / log23
+
+2/log23 < 1
+
+log2n > 2log3n
+
+so the binary is good than ternary
+
