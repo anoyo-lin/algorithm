@@ -17,8 +17,12 @@ class find_dup():
             index += 1
         return True
 
-array = [1, 0, 2, 3, 5, 4, 6]
 
-instance = find_dup(array)
+if __name__ == "__main__":
+    array = [1, 0, 2, 3, 5, 4, 6]
+    if array == None or len(array) < 1:
+        raise ValueError('wrong sample of array')
 
-print (instance.main())
+    instance = find_dup(array)
+
+    print (instance.main())
